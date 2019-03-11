@@ -28,7 +28,9 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
-    # normalize, tokenize and lemmatize
+    """
+    normalize, tokenize and lemmatize the input text.
+    """
     tokens = word_tokenize(text)
     lemmatizer = WordNetLemmatizer()
     clean_tokens = []
@@ -39,8 +41,11 @@ def tokenize(text):
 
 
 def build_model():
-    # the startingwithverb estimator in the feature union is bugged on my computer
-    # so I built the pipepline without this estimator
+    """
+    build a pipeline consisted of several transformers and a final classifier.
+    the parameters and the range to tune the model is also defined here.
+    the returned object is a classifier
+    """
     pipeline = Pipeline([
                 ('vect', CountVectorizer(tokenizer=tokenize)),
                 ('tfidf', TfidfTransformer()),
@@ -60,6 +65,10 @@ def build_model():
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
+    """
+    model evaluation
+    prints out the report of every category on the screen.
+    """
     Y_pred = model.predict(X_test)
     for i,col in enumerate(category_names):
         print('\n\n')
@@ -69,6 +78,9 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    """
+    save the model in the specified path
+    """
     with open('%s' %model_filepath, 'wb') as f:
         pickle.dump(model, f)
 
