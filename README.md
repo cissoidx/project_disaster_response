@@ -4,6 +4,9 @@
 In disasters, quick and accurate reponse to people's messages is crucial. This project builds a disaster reponse pipeline to analyze message data and classify them. There are all in total 36 categories, including disaster types like `fire`, `floods` and people's needs like `water`, `food` etc. It helps to alarm aid centers to quickly respond in case of a disaster.
 
 ### Description of files
+app: contains files that are necessary to launch the webapp.
+data: contains a python script `process_data.py` to implement an ETL pipeline, transfering two csv files to a data base.
+models: contains a python script `train_classifier.py` to implement a NLP pipeline to train the data in the data base.
 
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
