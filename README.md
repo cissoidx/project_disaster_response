@@ -1,5 +1,10 @@
 # Disaster Response Pipeline Project
 
+### Motivation of the project
+In disasters, quick and accurate reponse to people's messages is crucial. This project builds a disaster reponse pipeline to analyze message data and classify them. There are all in total 36 categories, including disaster types like `fire`, `floods` and people's needs like `water`, `food` etc. It helps to alarm aid centers to quickly respond in case of a disaster.
+
+### Description of files
+
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
